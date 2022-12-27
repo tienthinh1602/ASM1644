@@ -8,15 +8,14 @@ body, .list_product{
 
 
 h3, h4{
-    margin: 5px;
-    padding: 8px 8px 16px;
-    color: rgb(80, 77, 77);
+   
+    color: rgb(19, 18, 18);
 }
 
 .header{
     background-color: #28a8c9;
     color: rgb(255, 255, 255);
-    padding:8px 8px!important
+    padding:16px 10px!important
     
 }
 
@@ -32,7 +31,7 @@ h3, h4{
     border-radius: 5px;
     border:none;
     display:inline-block;
-    padding:8px 16px;
+    padding:4px 4px;
     vertical-align:middle;
     overflow:hidden;
     text-decoration:none;
@@ -81,8 +80,7 @@ input[type="text_search" i] {
 
 .list_product img{
     object-fit: cover;
-    width: 235px;
-    height: 230px;
+    height: 263px;
 }
 
 

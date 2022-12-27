@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 const { insertProduct, viewAllProduct, deleteProduct, searchProductByName } = require('./databaseHandle')
+const { handlebars } = require('hbs')
 
 app.set('view engine','hbs')
 app.use(express.urlencoded({extended:true}))
@@ -41,11 +42,27 @@ app.post('/new',async (req,res)=>{
         age: age,
         picture: picUrl
     }
-    
-    let id = await insertProduct(newProduct)
-    console.log(id)
-    res.redirect('/all')
+    if(name.trim().lenght> 20){ 
+    let modelError ={
+                nameError:"You must enter Name!",                
+            };            
+        res.render('newProduct',{results:modelError});
+        } else if(isNaN(price)){
+            let modelError1 =  {priceError:"  please enter number" };
+            res.render('newProduct',{results:modelError1});
+        }else{
+            let id = await insertProduct(newProduct)
+            console.log(id)
+            res.redirect('/all')
+        }
+   
 
+})
+
+handlebars.registerHelper('checkQuantity', function(number){
+    if(number < 20){
+        return true
+    } return false
 })
 
 app.get('/new',(req,res)=>{
