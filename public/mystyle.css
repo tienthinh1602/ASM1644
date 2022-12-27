@@ -1,0 +1,129 @@
+body, .list_product{
+    padding: 0;
+    margin: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: 1.5;
+    background: #e0e0e0;
+}
+
+
+h3, h4{
+    margin: 5px;
+    padding: 8px 8px 16px;
+    color: rgb(80, 77, 77);
+}
+
+.header{
+    background-color: #28a8c9;
+    color: rgb(255, 255, 255);
+    padding:8px 8px!important
+    
+}
+
+.card {
+    background-color: #28a8c9;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    float: left;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+.button
+{
+    border-radius: 5px;
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap}
+
+.button:hover{
+    border-radius: 5px;
+    color:#28a8c9!important;
+    background-color:rgb(221, 221, 221)!important
+}
+
+.right{
+    float:right!important
+}
+
+.sidebar_color{
+    background-color: #4ad8fc;
+    border: 1px solid #ffffff;
+    border-radius: 12px ;
+}
+
+
+input[type="text" i] {
+    padding-top: 5px;
+    padding-right: 100px;
+    padding-left: 10px;
+    margin-left: 10px;
+    float: right;
+    border: 1px solid #0abce9;
+    border-radius: 8px ;
+    font-size: 13px;
+}
+
+input[type="text_search" i] {
+    padding-top: 5px;
+    padding-right: 100px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border: 1px solid #0abce9;
+    border-radius: 8px ;
+}
+
+.list_product img{
+    object-fit: cover;
+    width: 235px;
+    height: 230px;
+}
+
+
+.add{
+    height: 500px;
+    width: auto;
+    float: left !important;
+}
+
+
+input[type="file" i] {
+    float: right;
+    margin-top: 5px;
+}
+
+.add select{
+    float: right;
+    width: 277px;
+    border: 1px solid #0abce9;
+    border-radius: 8px;
+    height: 25px;
+}
+
+input[type="submit" ] {
+    border: 1px solid #0abce9;
+    border-radius: 8px;
+    height: 30px;
+    text-align: center;
+}
+
+.image
+{
+    max-width:100%;
+    height:auto
+}
+
+option{
+    font-size: small;
+}
+
+.pad{
+    padding: 0 .75rem;
+    font-size: small;
+}

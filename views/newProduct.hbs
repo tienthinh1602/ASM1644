@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Create a new product</title>
+</head>
+<body>
+    <div class="header">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/1200px-LEGO_logo.svg.png"
+			width="20" height="20" class="d-inline-block align-text-top">
+        <a href="/" class=" button">Home</a>       
+        <div class="right ">
+            <a href="/all"  class="button ">All Product</a>
+        </div>
+    </div>
+
+    <div class="container ">
+        <h1>New Product</h1>
+        <form action="/new" method="post" class="add sidebar_color px-3 py-3">
+        <p>Name <input type="text" name="txtName" class = "form-control pad"> </p> 
+        <p>Price <input type="text" name="txtPrice" class = "form-control pad"></p>
+        <br>
+        <p>Category         
+            <select class = "form-control pad" name="category" >
+                <option value="Buildings">Buildings</option>
+                <option value="Vehicles">Vehicles</option>
+                <option value="Seasonal">Seasonal</option>
+                <option value="Fantasy">Fantasy</option>
+            </select>
+        </p>
+        <p>Quantity <input type="number" name="quantity" class="form-control " min="0" id="floatingQuantity"> </p>
+        <p>Age 
+            <div class="form-check">
+			    <input class="form-check-input" type="radio" name="age" value="3+" id="flexRadioDefault1">
+			    <label class="form-check-label" for="flexRadioDefault1">3+</label>
+		    </div>
+		    <div class="form-check">
+			    <input class="form-check-input" type="radio" name="age" value="9+" id="flexRadioDefault2" checked>
+			    <label class="form-check-label" for="flexRadioDefault2">9+</label>
+		    </div>
+		    <div class="form-check">
+			    <input class="form-check-input" type="radio" name="age" value="12+" id="flexRadioDefault2" checked>
+			    <label class="form-check-label" for="flexRadioDefault2">12+</label>
+		    </div></p>        
+        <p> Picture URL<input type="text" name="txtPic" class = "form-control pad"></p>     
+        <br> 
+        <input class="right" type="submit" value="Create a new Product">
+
+   
+        
+    </form>
+    </div>
+   
+</body>
+</html>
