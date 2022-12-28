@@ -43,20 +43,20 @@ app.post('/new',async (req,res)=>{
         picture: picUrl
     }
     if(name.trim().lenght> 20){ 
-    let modelError ={
-                nameError:"You must enter Name!",                
-            };            
+        let modelError ={ nameError:"You must enter Name!"};            
         res.render('newProduct',{results:modelError});
-        } else if(isNaN(price)){
-            let modelError1 =  {priceError:"  please enter number" };
-            res.render('newProduct',{results:modelError1});
-        }else{
-            let id = await insertProduct(newProduct)
-            console.log(id)
-            res.redirect('/all')
-        }
-   
-
+    }else if(isNaN(price)){
+        let modelError1 =  {priceError:"  please enter number" };
+        res.render('newProduct',{results:modelError1});
+    }else if (price<50 || price>100)        {
+        let modelError2 =  {priceError: "  please input price 50 to 100" };
+        res.render('newProduct',{results:modelError2});
+    }        
+    else {
+        let id = await insertProduct(newProduct)
+        console.log(id)
+        res.redirect('/all')
+    } 
 })
 
 handlebars.registerHelper('checkQuantity', function(number){
@@ -64,6 +64,8 @@ handlebars.registerHelper('checkQuantity', function(number){
         return true
     } return false
 })
+
+
 
 app.get('/new',(req,res)=>{
     res.render('newProduct')
