@@ -22,7 +22,8 @@
     <div class="container ">
         <h1>New Product</h1>
         <form action="/new" method="post" class="add sidebar_color px-3 py-3">
-        <p>Name <input type="text" name="txtName" class = "form-control pad" required> </p> 
+        <p>Name <input type="text" name="txtName" class = "form-control pad" required>
+         <label style="color: red;">{{ results.nameError }}</label> </p> 
         <p>Price ($)<input type="text" name="txtPrice" class = "form-control pad" required>
          <label style="color: red;" >{{ results.priceError}}</label></p>
         <br>
@@ -57,3 +58,6 @@
    
 </body>
 </html>
+
+
+

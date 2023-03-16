@@ -7,7 +7,17 @@ app.set('view engine','hbs')
 app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"))
 
+handlebars.registerHelper('checkQuantity', function(number){
+    if(number < 20){
+        return true
+    } return false
+})
 
+handlebars.registerHelper('checkPrice', function(num){
+    if(num < 50){
+        return true
+    } return false
+})
 
 app.post('/search',async (req,res)=>{
     const search = req.body.search
@@ -42,16 +52,13 @@ app.post('/new',async (req,res)=>{
         age: age,
         picture: picUrl
     }
-    if(name.trim().lenght> 20){ 
-        let modelError ={ nameError:"You must enter Name!"};            
-        res.render('newProduct',{results:modelError});
-    }else if(isNaN(price)){
+    if(isNaN(price)){
         let modelError1 =  {priceError:"  please enter number" };
         res.render('newProduct',{results:modelError1});
-    }else if (price<50 || price>100)        {
-        let modelError2 =  {priceError: "  please input price 50 to 100" };
-        res.render('newProduct',{results:modelError2});
-    }        
+    } else if (name.trim().lenght< 20){
+        let modelError3 = { nameError:"Please enter greater 20"};    
+        res.render('newProduct',{results:modelError3});
+    }
     else {
         let id = await insertProduct(newProduct)
         console.log(id)
@@ -59,11 +66,7 @@ app.post('/new',async (req,res)=>{
     } 
 })
 
-handlebars.registerHelper('checkQuantity', function(number){
-    if(number < 20){
-        return true
-    } return false
-})
+
 
 
 
